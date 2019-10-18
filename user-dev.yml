@@ -1,0 +1,25 @@
+server:
+  port: ${port:9091}
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///springcloud
+    username: root
+    password: root
+
+  application:
+    name: user-service
+mybatis:
+  type-aliases-package: com.itheima.user.pojo
+
+eureka:
+  client:
+    service-url:
+      # 服务高可用，前面的报错，后面的还可以用！ 不可能一次开启两个服务，比较麻烦
+     # defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+       defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    # 优先使用ip地址，而不是 host名
+    prefer-ip-address: true
+     # id 地址
+    ip-address: 127.0.0.1
