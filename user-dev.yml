@@ -24,4 +24,4 @@ eureka:
      # id 地址
     ip-address: 127.0.0.1
   
-
+test: heima
